@@ -1,6 +1,8 @@
 module Lib
-    ( someFunc
+    ( safeHead
     ) where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+safeHead :: [a] -> Maybe a 
+safeHead (x:_) = Just x
+safeHead _     = Nothing 
+        
